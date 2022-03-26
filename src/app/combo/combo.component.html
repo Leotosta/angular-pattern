@@ -1,0 +1,29 @@
+<p>combo works!</p>
+
+<div>
+    <select #classe (change)="0" >
+        <option value="sucesso" > Sucesso </option>
+        <option value="info" > Info </option>
+        <option value="alerta" > Alerta </option>
+
+    </select>
+</div>
+
+<br />
+
+<div class="alert" [class.sucesso]="classe.value === 'sucesso'" > Sucesso </div>
+<div class="{{classe.value}}"> Sucesso </div>
+
+<br />
+
+<input type="text" #inputValor (keyup)="onKeyUp($event)" (blur)="salvarCombo(inputValor.value)" (keyup.enter)="salvarCombo(inputValor.value)" />
+
+<p> Valor atual: {{valorAtual}} </p>
+<p> Valor Final: {{valorFinal}} </p>
+
+<h1> Ng Data bind </h1>
+
+<input type="text" [(ngModel)]="nome" />
+
+<p>{{ nome }}</p>
+
